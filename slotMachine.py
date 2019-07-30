@@ -2,19 +2,18 @@ import random
 
 initialCoins = 50
 
-
 def slotMachine(coins = initialCoins):
 
     reel1 = ["7", "BAR", "BAR", "BAR", "WM", "WM", "BELL", "GP", "GP", "GP", "GP", "GP", "GP", "GP", "OR", "OR", "OR",
-             "OR", "OR", "CH", "CH"]
+            "OR", "OR", "CH", "CH"]
 
     reel2 = ["7", "BAR", "BAR", "WM", "WM", "BELL", "BELL", "BELL", "BELL", "BELL", "GP", "GP", "GP", "OR", "OR", "OR",
-             "OR", "OR", "CH", "CH",
-             "CH", "CH", "CH", "CH"]
+            "OR", "OR", "CH", "CH",
+            "CH", "CH", "CH", "CH"]
 
     reel3 = ["7", "BAR", "WM", "WM", "BELL", "BELL", "BELL", "BELL", "BELL", "BELL", "BELL", "BELL", "GP", "GP", "GP",
-             "OR", "OR", "OR", "OR",
-             "LM", "LM", "LM", "LM"]
+            "OR", "OR", "OR", "OR",
+            "LM", "LM", "LM", "LM"]
 
     game = []
 
@@ -29,8 +28,6 @@ def slotMachine(coins = initialCoins):
         else:
             game = [reel1[random.randint(0,20)],reel2[random.randint(0,23)],reel3[random.randint(0,22)]]
             return print(game), print(coins)
-
-
 
 
 slotMachine()
