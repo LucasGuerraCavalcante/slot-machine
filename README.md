@@ -1,2 +1,2 @@
 # SlotMachine
-Simple Slot Machine Game in Python
+Slot Machine Game
