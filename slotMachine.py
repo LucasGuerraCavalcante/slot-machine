@@ -2,6 +2,9 @@
 import os, sys
 import random as rd
 
+# This is the initial version of the game, a simple and "primitive" game to play using the terminal.
+# The purpose of this project was to turn this into a web application.
+
 coins = 50
 
 reel1 = [
@@ -98,52 +101,52 @@ while playingGame is False:
                             print(" ||*|_______|*|_______|*|_______|*||_//")
                             print(" |===_______===_______===_______===|_/")      
                             print(" |lc=___________________________===|")
-                            print(" |  /___________________________\  |")
+                            print(" |  |___________________________|  |")
                             print(" |   |                         |   |")
-                            print("_|    \_______________________/    |_")
+                            print("_|    |_______________________|    |_")
                             print("(_____________________________________)\n")
                             # ------------------------------------------------------------
                             if game == ["🐍","🐍","🐍"]:
                                 prize = bet*200
                                 coins += prize
                                 print("YOU WON " + str(prize) + " coins!!!")
-                                print("Now you have " + str(coins) +  " to gable!!!\n")
+                                print("Now you have " + str(coins) +  " to gamble!!!\n")
                                 print("It's your lucky day\n")
                             elif game == ["💻", "💻", "💻"] or game == ["🍉", "🍉", "🍉"] or game == ["🍉", "🍉", "💻"]:
                                 prize = bet*100
                                 coins += prize
                                 print("YOU WON " + str(prize) + " coins!!!")
-                                print("Now you have " + str(coins) +  " to gable!!!\n")
+                                print("Now you have " + str(coins) +  " to gamble!!!\n")
                                 print("It's your lucky day\n")
                             elif game == ["🔔","🔔","🔔"] or game == ["🔔","🔔", "💻"]:
                                 prize = bet*18
                                 coins += prize
                                 print("YOU WON " + str(prize) + " coins!!!")
-                                print("Now you have " + str(coins) +  " to gable!!!\n")
+                                print("Now you have " + str(coins) +  " to gamble!!!\n")
                                 print("It's your lucky day\n")
                             elif game == ["🍇", "🍇", "🍇"] or game == ["🍇", "🍇", "💻"]:
                                 prize = bet*14
                                 coins += prize
                                 print("YOU WON " + str(prize) + " coins!!!")
-                                print("Now you have " + str(coins) +  " to gable!!!\n")
+                                print("Now you have " + str(coins) +  " to gamble!!!\n")
                                 print("It's your lucky day\n")
                             elif game == ["🍊", "🍊", "🍊"] or game == ["🍊", "🍊", "💻"]:
                                 prize = bet*10
                                 coins += prize
                                 print("YOU WON " + str(prize) + " coins!!!")
-                                print("Now you have " + str(coins) +  " to gable!!!\n")
+                                print("Now you have " + str(coins) +  " to gamble!!!\n")
                                 print("It's your lucky day\n")
                             elif game[0] == "🍒" and  game[1] == "🍒":
                                 prize = bet*5
                                 coins += prize
                                 print("YOU WON " + str(prize) + " coins!!!")
-                                print("Now you have " + str(coins) +  " to gable!!!\n")
+                                print("Now you have " + str(coins) +  " to gamble!!!\n")
                                 print("It's your lucky day\n")
                             elif game[0] == "🍒":
                                 prize = bet*2
                                 coins += prize
                                 print("YOU WON " + str(prize) + " coins!!!")
-                                print("Now you have " + str(coins) +  " to gable!!!\n")
+                                print("Now you have " + str(coins) +  " to gamble!!!\n")
                                 print("It's your lucky day\n")
                             else:
                                 ("You didn't win coins this time\n")
@@ -156,7 +159,7 @@ while playingGame is False:
                                 leverDown = True
                                 coinsInserted = False
                             else:
-                                print("You left the game with" + str(coins) + "coins!")
+                                print("You left the game with " + str(coins) + " coins!")
                                 leverDown = False
                         else:
                             print("\nInvalid value, try again")
