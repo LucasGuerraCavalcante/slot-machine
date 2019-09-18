@@ -6,23 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Style CSS -->
-    <link rel="stylesheet"  type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
 </head>
 
 <body>
-    <div class="container-fluid">
+    <div>
 
-        <div class="row" id="display">
-            <!-- The display will appear here -->
-        </div>
-
-        <div class="d-flex justify-content-center">
-            <div class="row" id="footer">
-                <p class="greenFooterText" id="footerText"> teste</p>
+        <div>
+            <div id="divTitle">
+                <h3 class="greenTitle" id="title">Slot Machine Game - Python and JavaScript</h3>
             </div>
         </div>
-    </div>
 
+        <div>
+            <div id="divButtons">
+                <div>
+                    <button type="button" class="greenButton" id="buttonDisplay" onClick="alert('On progress!');">coins:
+                    </button>
+                </div>
+                <div>
+                    <button type="button" class="greenButton" id="buttonDisplay"
+                        onClick="alert('On progress!');">bet</button>
+                </div>
+                <div>
+                    <button type="button" class="greenButton" id="buttonCount"
+                        onClick="alert('On progress!');">rules</button>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <!-- The status will appear here -->
+                <p class="greenText" id="status"> status test</p>
+            </div>
+        </div>
+
+        <div>
+            <!-- The game will appear here -->
+        </div>
+
+        <div>
+            <div>
+                <p class="greenFooterText" id="footerText"> Devoloped by Lucas Guerra in 2019</p>
+            </div>
+        </div>
+
+    </div>
 </body>
 
 </html>

@@ -33,16 +33,6 @@ button {
     border-color: rgb(0, 255, 0);
 }
 
-.redButton {
-    color: rgb(255, 0, 0);
-    border-color: rgb(0, 255, 0);
-}
-
-.blueButton {
-    color: rgb(0, 0, 255);
-    border-color: rgb(0, 255, 0);
-}
-
 /* ---------------------- */
 /* ---------------------- */
 /* ------- Selects ------ */
@@ -64,15 +54,6 @@ select {
     border-color: rgb(0, 255, 0);
 }
 
-.redSelect {
-    color: rgb(255, 0, 0);
-    border-color: rgb(255, 0, 0);
-}
-
-.blueSelect {
-    color: rgb(0, 0, 255);
-    border-color: rgb(0, 0, 255);
-}
 
 /* ---------------------- */
 /* ---------------------- */
@@ -84,21 +65,13 @@ select {
     background-color: black;
     font-weight: bold;
     font-family: techFont;
-    font-size: 70px;
+    font-size: 35px;
     padding: 20px;
     text-align: center;
 }
 
 .greenTitle {
     color: rgb(0, 255, 0);
-}
-
-.redTitle {
-    color: rgb(255, 0, 0);
-}
-
-.blueTitle {
-    color: rgb(0, 0, 255);
 }
 
 /* ---------------------- */
@@ -109,19 +82,18 @@ select {
 
 .greenFooterText {
     padding-top: 50px;
+    font-weight: bold;
+    text-align: center;
     color: rgb(0, 255, 0);
-}
-
-.redFooterText{
-    padding-top: 50px;
-    color: rgb(255, 0, 0);
-}
-
-.blueFooterText {
-    padding-top: 50px;
-    color: rgb(0, 0, 255);
 }
 
 #selColorPedding {
     padding-top: 400px;
 }
+
+
+/* ---------------------- */
+/* ---------------------- */
+/* ------- Status ------- */
+/* ---------------------- */
+/* ---------------------- */
