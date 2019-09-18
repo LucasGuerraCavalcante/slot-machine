@@ -14,41 +14,54 @@
 
         <div>
             <div id="divTitle">
-                <h3 class="greenTitle" id="title">Slot Machine Game - Python and JavaScript</h3>
+                <h3 class="greenText" id="title">Slot Machine Game - Python and JavaScript</h3>
             </div>
         </div>
 
         <div>
             <div id="divButtons">
                 <div>
-                    <button type="button" class="greenButton" id="buttonDisplay" onClick="alert('On progress!');">coins:
-                    </button>
+                    <p class="greenText"> Coins: {{ coins }}</p>
                 </div>
                 <div>
                     <button type="button" class="greenButton" id="buttonDisplay"
-                        onClick="alert('On progress!');">bet</button>
+                    onClick="alert('On progress!');">bet</button>
                 </div>
                 <div>
                     <button type="button" class="greenButton" id="buttonCount"
-                        onClick="alert('On progress!');">rules</button>
+                    onClick="alert('On progress!');">rules</button>
                 </div>
             </div>
         </div>
 
         <div>
-            <div>
-                <!-- The status will appear here -->
-                <p class="greenText" id="status"> status test</p>
-            </div>
+            <pre class="slotMachine">.-------.  </pre>
+            <pre class="slotMachine">|       |  </pre>
+            <pre class="slotMachine">_____________|_______|____________   </pre>
+            <pre class="slotMachine">|                                 |   </pre>
+            <pre class="slotMachine">|===_______===_______===_______===| __</pre>
+            <pre class="slotMachine"> ||*|_______|*|_______|*|_______|*||(__)</pre>
+            <pre class="slotMachine">|===_______===_______===_______===| ||</pre>
+            <pre class="slotMachine">||*| _____ |*| _____ |*| _____ |*|| ||</pre>
+            <pre class="slotMachine">||*||     ||*||     ||*||     ||*|| ||</pre>
+            <pre class="slotMachine">||*|| {{ a }}    ||*||   {{ b }}  ||*||  {{ c }}   ||*|| ||</pre>
+            <pre class="slotMachine">||*||_____||*||_____||*||_____||*|| ||</pre>
+            <pre class="slotMachine">||*|_______|*|_______|*|_______|*||_//</pre>
+            <pre class="slotMachine">|===_______===_______===_______===|_/ </pre>
+            <pre class="slotMachine">|lc=___________________________===|   </pre>
+            <pre class="slotMachine">|   |                         |   |   </pre>
+            <pre class="slotMachine">_|    |_______________________|    |_   </pre>
+            <pre class="slotMachine">(_____________________________________)   </pre>
         </div>
 
         <div>
-            <!-- The game will appear here -->
+            <!-- The status will appear here -->
+            <p class="greenText" id="status"> {{ status }} </p>
         </div>
 
         <div>
             <div>
-                <p class="greenFooterText" id="footerText"> Devoloped by Lucas Guerra in 2019</p>
+                <p class="greenText" id="footerText"> Devoloped by Lucas Guerra in 2019</p>
             </div>
         </div>
 
