@@ -4,6 +4,7 @@ import random as rd
 
 # This is the initial version of the game, a simple and "primitive" game to play using the terminal.
 # The purpose of this project was to turn this into a web application.
+# Check the "app" folder to see the real game/webapp.
 
 coins = 50
 
