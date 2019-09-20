@@ -12,7 +12,7 @@ def render_static():
     coins = 50
 
     return render_template('index.html', 
-            coinsPlay = str(coins), a = "  ", b = "  ", c = "  ")
+            coinsPlay = str(coins), a = " ", b = " ", c = " ")
 
 
 @app.route("/bet", methods=['POST'])
@@ -20,41 +20,96 @@ def render_static():
 def bet():
     
     reel1 = [
-            "🐍", # Python Snake (1)
-            "💻", "💻", "💻", # Computer (3)
-            "🍉", "🍉", # Watermelon (2)
-            "🔔", # Bell (1)
-            "🍇", "🍇", "🍇", "🍇", "🍇", "🍇", "🍇", # Grape (7)
-            "🍊", "🍊", "🍊","🍊", "🍊", # Orange (5)
-            "🍒", "🍒"] # Cherrie (2)
+                "7", # 7 (1)
+                "A", "A", "A", # A (bar) (3)
+                "♠", "♠", # Spades (Watermelon) (2)
+                "♣", # Clubs (Bell) (1)
+                "♥", "♥", "♥", "♥", "♥", "♥", "♥", # Hearts (Grape) (7)
+                "♦", "♦", "♦","♦", "♦", # Diamonds (Orange) (5)
+                "☺", "☺"] # Happy Face (Chery) (2)
 
     reel2 = [
-                "🐍", # Python Snake (1)
-                "💻", "💻", # Computer (2)
-                "🍉", "🍉", # Watermelon (2)
-                "🔔", "🔔", "🔔", "🔔", "🔔", # Bell (5)
-                "🍇", "🍇", "🍇", # Grape (3)
-                "🍊", "🍊", "🍊","🍊", "🍊", # Orange (5)
-                "🍒", "🍒","🍒", "🍒", "🍒", "🍒"] # Cherrie (6)
+                "7", # 7 (1)
+                "A", "A", # A (bar) (2)
+                "♠", "♠", # Spades (Watermelon)  (2)
+                "♣", "♣", "♣", "♣", "♣", # Clubs (Bell) (5)
+                "♥", "♥", "♥", # Hearts (Grape) (3)
+                "♦", "♦", "♦","♦", "♦", # Diamonds (Orange) (5)
+                "☺", "☺","☺", "☺", "☺", "☺"] # Happy Face (Chery) (6)
 
     reel3 = [
-                "🐍", # Python Snake (1)
-                "💻", # Computer (1)
-                "🍉", "🍉", # Watermelon (2)
-                "🔔", "🔔", "🔔", "🔔", "🔔", "🔔", "🔔", "🔔", # Bell (8)
-                "🍇", "🍇", "🍇", # Grape (3)
-                "🍊", "🍊", "🍊", "🍊", # Orange (4)
-                "👾", "👾", "👾", "👾"] # Evil Alien (4)
-
-    game = []
+                "7", # 7 (1)
+                "A", # A (bar) (1)
+                "♠", "♠", # Spades (Watermelon)  (2)
+                "♣", "♣", "♣", "♣", "♣", "♣", "♣", "♣", # Clubs (Bell) (8)
+                "♥", "♥", "♥", # Hearts (Grape) (3)
+                "♦", "♦", "♦", "♦", # Diamonds (Orange) (4)
+                "☹", "☹", "☹", "☹"] # Sad Face (Lemon) (4)
 
     coins = 50
-    a = "🍊"
-    b = "🍉"
-    c = "👾"
+
+    if coins != 0:
+        game = [reel1[rd.randint(0,20)],reel2[rd.randint(0,23)],reel3[rd.randint(0,22)]]
+        if game == ["7","7","7"]:
+            #prize = bet*200
+            #coins += prize
+            status = "YOU WON  coins!!!"
+            print("It's your lucky day\n")
+            a = game[0]
+            b = game[1]
+            c = game[2]
+        elif game == ["A", "A", "A"] or game == ["♠", "♠", "♠"] or game == ["♠", "♠", "A"]:
+            #prize = bet*100
+            #coins += prize
+            status = "YOU WON  coins!!!"
+            a = game[0]
+            b = game[1]
+            c = game[2]
+        elif game == ["♣","♣","♣"] or game == ["♣","♣", "A"]:
+            #prize = bet*18
+            #coins += prize
+            status = "YOU WON  coins!!!"
+            a = game[0]
+            b = game[1]
+            c = game[2]
+        elif game == ["♥", "♥", "♥"] or game == ["♥", "♥", "A"]:
+            #prize = bet*14
+            #coins += prize
+            status = "YOU WON  coins!!!"
+            a = game[0]
+            b = game[1]
+            c = game[2]
+        elif game == ["♦", "♦", "♦"] or game == ["♦", "♦", "A"]:
+            #prize = bet*10
+            #coins += prize
+            status = "YOU WON  coins!!!"
+            a = game[0]
+            b = game[1]
+            c = game[2]
+        elif game[0] == "☺" and  game[1] == "☺":
+            #prize = bet*5
+            #coins += prize
+            status = "YOU WON  coins!!!"
+            a = game[0]
+            b = game[1]
+            c = game[2]
+        elif game[0] == "☺":
+            #prize = bet*2
+            #coins += prize
+            status = "YOU WON  coins!!!"
+            a = game[0]
+            b = game[1]
+            c = game[2]
+        else:
+            a = game[0]
+            b = game[1]
+            c = game[2]
+            status = "No luck today"
 
 
-    return render_template('index.html',coinsPlay = str(coins), a = a, b = b, c = c)
+    return render_template('index.html',coinsPlay = str(coins), 
+            a = a, b = b, c = c, space = "",
+            status = status)
 
 
 if __name__ == '__main__':
