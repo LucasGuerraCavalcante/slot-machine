@@ -6,18 +6,15 @@ from flask import Flask, render_template, request, jsonify
 app = Flask(__name__)
 
 @app.route('/')
-
 def render_static():
 
-    coins = 50
-
-    return render_template('index.html', 
-            coinsPlay = str(coins), a = " ", b = " ", c = " ")
+    return render_template('index.html')
 
 
 @app.route("/bet", methods=['POST'])
-
 def bet():
+
+    print("teste")
     
     reel1 = [
                 "7", # 7 (1)
@@ -49,104 +46,91 @@ def bet():
     coins = 50
     
     bet = request.form['bet']
-    coins = request.form['coins']
-    a = request.form['a']
-    b = request.form['b']
-    c = request.form['c']
-    status = request.form['status']
-    space = request.form['space']
 
     coins -= bet
 
     if (coins and bet) and (coins > 0 and bet > 0):
-        space += ''
 
         game = [reel1[rd.randint(0,20)],reel2[rd.randint(0,23)],reel3[rd.randint(0,22)]]
         if game == ["7","7","7"]:
             prize = bet*200
-            status += "YOU WON  coins!!!"
-            coins += prize
-            a += game[0]
-            b += game[1]
-            c += game[2]
+            status = "YOU WON  coins!!!"
+            coins = prize
+            a = game[0]
+            b = game[1]
+            c = game[2]
         elif game == ["A", "A", "A"] or game == ["♠", "♠", "♠"] or game == ["♠", "♠", "A"]:
             prize = bet*100
-            status += "YOU WON  coins!!!"
-            coins += prize
-            a += game[0]
-            b += game[1]
-            c += game[2]
+            status = "YOU WON  coins!!!"
+            coins = prize
+            a = game[0]
+            b = game[1]
+            c = game[2]
         elif game == ["♣","♣","♣"] or game == ["♣","♣", "A"]:
             prize = bet*18
-            status += "YOU WON  coins!!!"
-            coins += prize
-            a += game[0]
-            b += game[1]
-            c += game[2]
+            status = "YOU WON  coins!!!"
+            coins = prize
+            a = game[0]
+            b = game[1]
+            c = game[2]
         elif game == ["♥", "♥", "♥"] or game == ["♥", "♥", "A"]:
             prize = bet*14
-            status += "YOU WON  coins!!!"
-            coins += prize
-            a += game[0]
-            b += game[1]
-            c += game[2]
+            status = "YOU WON  coins!!!"
+            coins = prize
+            a = game[0]
+            b = game[1]
+            c = game[2]
         elif game == ["♦", "♦", "♦"] or game == ["♦", "♦", "A"]:
             prize = bet*10
-            status += "YOU WON  coins!!!"
-            coins += prize
-            a += game[0]
-            b += game[1]
-            c += game[2]
+            status = "YOU WON  coins!!!"
+            coins = prize
+            a = game[0]
+            b = game[1]
+            c = game[2]
         elif game[0] == "☺" and  game[1] == "☺":
             prize = bet*5
-            status += "YOU WON  coins!!!"
-            coins += prize
-            a += game[0]
-            b += game[1]
-            c += game[2]
+            status = "YOU WON  coins!!!"
+            coins = prize
+            a = game[0]
+            b = game[1]
+            c = game[2]
         elif game[0] == "☺":
             prize = bet*2
-            status += "YOU WON  coins!!!"
-            coins += prize
-            a += game[0]
-            b += game[1]
-            c += game[2]
+            status = "YOU WON  coins!!!"
+            coins = prize
+            a = game[0]
+            b = game[1]
+            c = game[2]
         else:
-            a += game[0]
-            b += game[1]
-            c += game[2]
-            status += "No luck today"
+            a = game[0]
+            b = game[1]
+            c = game[2]
+            status = "No luck today"
 
         return jsonify({
-            'bet':  bet,
             'coins': coins,
             'a': a,
             'b': b,
             'c': c,
             'status': status,
-            'space': space
         })
 
     else:
         if (coins < 0):
-            status += "Missing coins"
+            status = "Missing coins"
         elif (bet < 0):
-            status += "Missing a resonable bet value"
+            status = "Missing a resonable bet value"
         else: 
-            status += "Missing data"
+            status = "Missing data"
 
         return jsonify({
-            'bet':  bet,
             'coins': coins,
             'a': 'X',
             'b': 'X',
             'c': 'X',
             'status': status,
-            'space': ''
         })
 
-
-
-
+        
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port='5000', debug=True)

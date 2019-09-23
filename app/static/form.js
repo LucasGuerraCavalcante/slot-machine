@@ -2,31 +2,29 @@ $(document).ready(function() {
 
 	$('form').on('buttonDisplay', function(event) {
 
+		console.log("teste1");
+
 		$.ajax({
 			data : {
-                bet : $('#bet').val(),
                 coins : $('#coins').val(),
                 a : $('#a').val(),
                 b : $('#b').val(),
                 c : $('#c').val(),
                 status : $('#status').val(),
-                space : $('#space').val()
 			},
 			type : 'POST',
 			url : '/bet'
 		})
 		.done(function(data) {
 
-            // ajeitar no HTML ids cada um
+            $('#coins').html(data.coins);
+            $('#a').html(data.a);
+            $('#b').html(data.b);
+            $('#c').html(data.c);
+			$('#status').html(data.status);
 
-			$('#successAlert').text(data.name).show();
-            $('#errorAlert').text(data.name).show();
-            $('#successAlert').text(data.name).show();
-            $('#errorAlert').text(data.name).show();
-            $('#successAlert').text(data.name).show();
-            $('#errorAlert').text(data.name).show();
-            $('#errorAlert').text(data.name).show();
-
+			console.log("teste2");
+			
 		});
 
 		event.preventDefault();

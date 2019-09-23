@@ -37,16 +37,14 @@
 
         <div class="row">
             <div class="col-md-2">
-                <p class="greenText"> Coins: {{ coinsPlay }}</p>
+                <p class="greenText"> Coins: <b id="coins"></b></p>
                 <!-- The status will appear here -->
-                <p class="greenText" id="status"> {{ status }} </p>
+                <p class="greenText" id="status"></p>
             </div>
             <div class="col-md-2">
-                <form>
-                    <input type="number"class="greenButton">
-                </form>
-                <form>
-                    <button class="greenButton" id="buttonDisplay">bet</button>
+                <form class="form-inline">
+                    <input type="number" id="bet" class="greenButton">
+                    <button type="submit" class="greenButton" id="buttonDisplay">bet</button>
                 </form>
             </div>
             <div clas="col-md-4 nopadding">
@@ -59,7 +57,8 @@
                 <pre class="slotMachine">|===_______===_______===_______===| ||</pre>
                 <pre class="slotMachine">||*| _____ |*| _____ |*| _____ |*|| ||</pre>
                 <pre class="slotMachine">||*||     ||*||     ||*||     ||*|| ||</pre>
-                <pre class="slotMachine">||*||  {{ a }}  ||*||  {{ b }}  ||*||  {{ c }}  ||*|| ||</pre>
+                <pre
+                    class="slotMachine">||*||  <b id="a"> </b>  ||*||  <b id="b"> </b>  ||*||  <b id="c"> </b>  ||*|| ||</pre>
                 <pre class="slotMachine">||*||_____||*||_____||*||_____||*|| ||</pre>
                 <pre class="slotMachine">||*|_______|*|_______|*|_______|*||_//</pre>
                 <pre class="slotMachine">|===_______===_______===_______===|_/ </pre>
