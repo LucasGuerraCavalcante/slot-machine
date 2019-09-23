@@ -44,11 +44,11 @@ button {
 
 /* ---------------------- */
 /* ---------------------- */
-/* ------- Selects ------ */
+/* -------- Input ------- */
 /* ---------------------- */
 /* ---------------------- */
 
-select {
+input {
     background-color: black;
     width: 100px;
     height: 30px;
@@ -57,7 +57,7 @@ select {
     font-family: techFont;
 }
 
-.greenSelect {
+.greenInput {
     color: rgb(0, 255, 0);
     border-color: rgb(0, 255, 0);
 }
