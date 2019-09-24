@@ -33,6 +33,7 @@ button {
     width: 100px;
     height: 30px;
     padding: 0px;
+    margin: 5px;
     font-size: 20px;
     font-family: techFont;
 }
@@ -52,6 +53,7 @@ input {
     background-color: black;
     width: 100px;
     height: 30px;
+    margin: 5px;
     box-sizing: border-box;
     padding-bottom: 6px;
     font-family: techFont;

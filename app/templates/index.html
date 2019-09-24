@@ -42,10 +42,7 @@
                 <p class="greenText" id="status"> {{ status }}</p>
             </div>
             <div class="col-md-2">
-                <form class="form-inline" action="/bet" method="post">
-                    <input type="number" min="1" name="betInput" class="greenInput" required>
-                    <button type="submit" class="greenButton" id="buttonDisplay">bet</button>
-                </form>
+                <p class="greenText" id="sequence"> {{ sequence }}</p>
             </div>
             <div clas="col-md-4 nopadding">
                 <pre class="slotMachine">.-------.  </pre>
@@ -66,6 +63,16 @@
                 <pre class="slotMachine">|   |                         |   |   </pre>
                 <pre class="slotMachine">_|    |_______________________|    |_   </pre>
                 <pre class="slotMachine">(_____________________________________)   </pre>
+            </div>
+            <div class="col-md-2">
+                <form class="form-inline" action="/bet" method="post">
+                    <input type="number" min="1" name="betInput" class="greenInput" required>
+                    <button type="submit" class="greenButton" id="buttonDisplay">bet</button>
+                </form>
+            </div>
+            <div class="col-md-2">
+                <button class="greenButton" id="buttonSeq">sequences</button>
+                <div id="sequences"></div>
             </div>
         </div>
 

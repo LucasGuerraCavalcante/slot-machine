@@ -18,7 +18,6 @@ def render_static():
     return render_template('index.html', status='Bet some coins', 
     a=' ', b=' ', c=' ', coins=data.coins)
 
-
 @app.route("/bet", methods=['GET','POST'])
 def bet():
 
@@ -52,85 +51,139 @@ def bet():
     bet = request.form['betInput']
     bet = int(bet)
 
-    if (data.coins and bet) and (data.coins > 0 and bet > 0):
+    if (data.coins < 0):
+
+        return render_template('index.html', 
+            status="Out of coins", sequence="Go back to '/' to play again",
+            a='X', b='X', c='X', coins=0)
+
+    elif (bet < 0):
+
+        return render_template('index.html', 
+            status="Missing a resonable bet value", sequence="Go back to '/' to play again",
+            a='X', b='X', c='X', coins=0)
+
+    elif (data.coins and bet) and (data.coins > 0 and bet > 0):
 
         data.coins -= bet
 
         game = [reel1[rd.randint(0,20)],reel2[rd.randint(0,23)],reel3[rd.randint(0,22)]]
+
         if game == ["7","7","7"]:
+
             prize = bet*200
-            status = "YOU WON " + str(prize) +" coins!!!"
+            status = "YOU WON " + str(prize) + " coins!!!"
             data.coins += prize
+
+            sequence = "Three 7 sequence"
+
             a = game[0]
             b = game[1]
             c = game[2]
+
         elif game == ["A", "A", "A"] or game == ["♠", "♠", "♠"] or game == ["♠", "♠", "A"]:
+
             prize = bet*100
-            status = "YOU WON " + str(prize) +" coins!!!"
+            status = "YOU WON " + str(prize) + " coins!!!"
             data.coins += prize
+
+            if game == ["A", "A", "A"]:
+                sequence = "Three As sequence"
+            elif game == ["♠", "♠", "♠"]:
+                sequence = "Three Spades sequence"
+            else:
+                sequence = "Two Spades and one A sequence"
+
             a = game[0]
             b = game[1]
             c = game[2]
+
         elif game == ["♣","♣","♣"] or game == ["♣","♣", "A"]:
+
             prize = bet*18
-            status = "YOU WON " + str(prize) +" coins!!!"
+            status = "YOU WON " + str(prize) + " coins!!!"
             data.coins += prize
+
+            if game == ["♣","♣","♣"]:
+                sequence = "Three Hearts sequence"
+            else:
+                sequence = "Two Hearts and one A sequence"
+
             a = game[0]
             b = game[1]
             c = game[2]
+
         elif game == ["♥", "♥", "♥"] or game == ["♥", "♥", "A"]:
+
             prize = bet*14
-            status = "YOU WON " + str(prize) +" coins!!!"
+            status = "YOU WON " + str(prize) + " coins!!!"
             data.coins += prize
+
+            if game == ["♥", "♥", "♥"]:
+                sequence = "Three Hearts sequence"
+            else:
+                sequence = "Two Hearts and one A sequence"
+
             a = game[0]
             b = game[1]
             c = game[2]
+
         elif game == ["♦", "♦", "♦"] or game == ["♦", "♦", "A"]:
+
             prize = bet*10
-            status = "YOU WON " + str(prize) +" coins!!!"
+            status = "YOU WON " + str(prize) + " coins!!!"
             data.coins += prize
+
+            if game == ["♦", "♦", "♦"]:
+                sequence = "Three Diammons sequence"
+            else:
+                sequence = "Two Diammons and one A sequence"
+
             a = game[0]
             b = game[1]
             c = game[2]
+
         elif game[0] == "☺" and  game[1] == "☺":
+
             prize = bet*5
-            status = "YOU WON " + str(prize) +" coins!!!"
+            status = "YOU WON " + str(prize) + " coins!!!"
             data.coins += prize
+
+            sequence = "Two Happy Faces sequence"
+
             a = game[0]
             b = game[1]
             c = game[2]
+
         elif game[0] == "☺":
             prize = bet*2
-            status = "YOU WON " + str(prize) +" coins!!!"
+            status = "YOU WON " + str(prize) + " coins!!!"
             data.coins += prize
+
+            sequence = "One Happy Face sequence"
+
             a = game[0]
             b = game[1]
             c = game[2]
+
         else:
             a = game[0]
             b = game[1]
             c = game[2]
             status = "Try again, good lucky"
+            sequence = ''
 
-        print(status)
-        print(a)
-        print(b)
-        print(c)
-        print(data.coins)
+        if data.coins < 0:
+            data.coins = 0
 
-        return render_template('index.html', status=status, 
-        a=a, b=b, c=c, coins=data.coins)
+        return render_template('index.html', status=status, sequence=sequence,
+            a=a, b=b, c=c, coins=data.coins)
 
-    else:
-        if (data.coins < 0):
-            status = "Out of coins - Restart the server to play again"
-        elif (bet < 0):
-            status = "Missing a resonable bet value"
-        else: 
-            status = "Missing data"
+    else: 
+        status = "Missing data"
 
-        return render_template('index.html',
-            status=status, a='X', b='X', c='X', coins=data.coins)
+        return render_template('index.html', status=status, sequence="Go back to '/' to play again",
+            a='X', b='X', c='X', coins=0)
 
             
 if __name__ == '__main__':
