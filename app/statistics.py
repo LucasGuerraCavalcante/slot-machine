@@ -30,7 +30,7 @@ reel3 = np.array([
     ['Clubs',      8],
     ['Hearts',     3],
     ['Diamonds',   4],
-    ['Sad Face',   2]
+    ['Sad Face',   4]
 ])
 
 # Turning then into data frames
