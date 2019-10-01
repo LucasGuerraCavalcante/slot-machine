@@ -1,20 +1,72 @@
 
-// One day I'll aply ajax in my project
-
 function sequences() {
 	document.getElementById("sequences").innerHTML = 
 	'<table>' +
 		'<tr>' +
 			'<th>[7 7 7]</th>' +
 			'<th>Bet x 200</th>' +
-			'<th>  </th>' +
-	'<p></p>' +
-	'<p></p>' +
-	'<p></p>' +
-	'<p></p>' +
-	'<p></p>' +
-	'<p></p>' 
+			'<th> 0.009% </th>' +
+		'</tr>' +
+		'<tr>' +
+			'<th>[A A A]</th>' +
+			'<th>Bet x 100</th>' +
+			'<th> 0.057% </th>' +
+		'</tr>' +
+		'<tr>' +
+			'<th>[♠ ♠ ♠]</th>' +
+			'<th>Bet x 100</th>' +
+			'<th> 0.076% </th>' +
+		'</tr>' +
+		'<tr>' +
+			'<th>[♠ ♠ A]</th>' +
+			'<th>Bet x 100</th>' +
+			'<th> 0.038% </th>' +
+		'</tr>' +
+		'<tr>' +
+			'<th>[♣ ♣ ♣]</th>' +
+			'<th>Bet x 18</th>' +
+			'<th> 0.378% </th>' +
+		'</tr>' +
+		'<tr>' +
+			'<th>[♣ ♣ A]</th>' +
+			'<th>Bet x 18</th>' +
+			'<th> 0.047% </th>' +
+		'</tr>' +
+		'<tr>' +
+			'<th>[♥ ♥ ♥]</th>' +
+			'<th>Bet x 14</th>' +
+			'<th> 0.595% </th>' +
+		'</tr>' +
+		'<tr>' +
+			'<th>[♥ ♥ A]</th>' +
+			'<th>Bet x 14</th>' +
+			'<th> 0.009% </th>' +
+		'</tr>' +
+		'<tr>' +
+			'<th>[♦ ♦ ♦]</th>' +
+			'<th>Bet x 10</th>' +
+			'<th> 0.945% </th>' +
+		'</tr>' +
+		'<tr>' +
+			'<th>[♦ ♦ A]</th>' +
+			'<th>Bet x 10</th>' +
+			'<th> 0.236%   </th>' +
+		'</tr>' +
+		'<tr>' +
+			'<th>[☺ ☺ ANY]</th>' +
+			'<th>Bet x 200</th>' +
+			'<th> 2.484% </th>' +
+		'</tr>' +
+		'<tr>' +
+			'<th>[☺ ANY ANY]</th>' +
+			'<th>Bet x 200</th>' +
+			'<th> 9.524% </th>' +
+		'</tr>' +
+	'</table>'
+
 }
+
+// One day I'll aply ajax in my project
 
 $(document).ready(function() {
 

@@ -105,9 +105,9 @@ def bet():
             data.coins += prize
 
             if game == ["♣","♣","♣"]:
-                sequence = "Three Hearts sequence"
+                sequence = "Three Clubs sequence"
             else:
-                sequence = "Two Hearts and one A sequence"
+                sequence = "Two Clubs and one A sequence"
 
             a = game[0]
             b = game[1]
@@ -135,9 +135,9 @@ def bet():
             data.coins += prize
 
             if game == ["♦", "♦", "♦"]:
-                sequence = "Three Diammons sequence"
+                sequence = "Three Diamonds sequence"
             else:
-                sequence = "Two Diammons and one A sequence"
+                sequence = "Two Diamonds and one A sequence"
 
             a = game[0]
             b = game[1]
