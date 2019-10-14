@@ -51,7 +51,7 @@ def bet():
     bet = request.form['betInput']
     bet = int(bet)
 
-    if (data.coins < 0):
+    if (data.coins <= 0):
 
         return render_template('index.html', 
             status="Out of coins", sequence="Go back to '/' to play again",

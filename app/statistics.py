@@ -110,11 +110,9 @@ prob1 = prob(5,5,1)
 print('[♦ ♦ A] sequence {}'.format(prob1))
 
 # [☺ ☺ ANY] sequence
-
 prob1 = str(round(((2*6)/(21*23))*100, 3)) + '%'  
 print('[☺ ☺ ANY] sequence {}'.format(prob1))
 
 # [☺ ANY ANY] sequence
-
 prob1 = str(round((2/21)*100, 3)) + '%'  
 print('[☺ ANY ANY] sequence {}'.format(prob1))
