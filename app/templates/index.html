@@ -16,6 +16,7 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
 
+    <!-- JavaScript (form.js) -->
     <script src="{{ url_for('static', filename='form.js') }}"></script>
 
     <!-- Bootstrap -->
@@ -74,15 +75,17 @@
         <div clas="row">
             <div class="col-md-6">
                 <button class="greenButton" id="buttonSeq" onclick="sequences();">sequences</button>
-                <div id="sequences"></div>
+                <div id="sequences">
+                    <!-- The sequences table will appear here -->
+                </div>
             </div>
         </div>
 
-        <div>
-            <div>
-                <p class="greenText" id="footerText"> Devoloped by Lucas Guerra in 2019</p>
-            </div>
+        
+        <div clas="row">
+            <p class="greenText" id="footerText"> Devoloped by Lucas Guerra in 2019</p>
         </div>
+        
 
     </div>
 </body>

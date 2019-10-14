@@ -1,6 +1,10 @@
 import numpy as np
 import pandas as pd
 
+# File that I made just to calculate the probabilities of the sequences
+
+# -----------------------------------------------------------
+
 # Creating the Arrays
 
 reel1 = np.array([
@@ -30,8 +34,10 @@ reel3 = np.array([
     ['Clubs',      8],
     ['Hearts',     3],
     ['Diamonds',   4],
-    ['Sad Face',   4]
+    ['Sad Face',   2]
 ])
+
+# -----------------------------------------------------------
 
 # Turning then into data frames
 
@@ -51,23 +57,20 @@ totalReel1 = reel1['qt'].sum()
 totalReel2 = reel2['qt'].sum()
 totalReel3 = reel3['qt'].sum()
 
-print("{} {} {}".format(totalReel1, totalReel2, totalReel3))
-
 # -----------------------------------------------------------
 
 # Total (totalReel1 x totalReel2 x totalReel3)
 
 total = totalReel1*totalReel2*totalReel3
 
-# Function to calculate the probability of any sequence
-# It works receiving the index related to the symbol that you want in each reel
 def prob(n1,n2,n3):
-    
     val1 = reel1.iloc[n1]['qt']
     val2 = reel2.iloc[n2]['qt']
     val3 = reel3.iloc[n3]['qt']
 
     return str(round(((val1*val2*val3)/total)*100, 3)) + '%'  
+
+# -----------------------------------------------------------
 
 # [7 7 7] sequence 
 prob1 = prob(0,0,0)
@@ -110,9 +113,13 @@ prob1 = prob(5,5,1)
 print('[♦ ♦ A] sequence {}'.format(prob1))
 
 # [☺ ☺ ANY] sequence
+
 prob1 = str(round(((2*6)/(21*23))*100, 3)) + '%'  
 print('[☺ ☺ ANY] sequence {}'.format(prob1))
 
 # [☺ ANY ANY] sequence
+
 prob1 = str(round((2/21)*100, 3)) + '%'  
 print('[☺ ANY ANY] sequence {}'.format(prob1))
+
+# -----------------------------------------------------------

@@ -58,12 +58,12 @@ function sequences() {
 			'</tr>' +
 			'<tr>' +
 				'<th>[☺ ☺ ANY]</th>' +
-				'<th>Bet x 200</th>' +
+				'<th>Bet x 2</th>' +
 				'<th> 2.484% </th>' +
 			'</tr>' +
 			'<tr>' +
 				'<th>[☺ ANY ANY]</th>' +
-				'<th>Bet x 200</th>' +
+				'<th>Bet x 2</th>' +
 				'<th> 9.524% </th>' +
 			'</tr>' +
 		'</table>'
@@ -77,24 +77,18 @@ function sequences() {
 
 // One day I'll aply ajax in my project
 
-$(document).ready(function() {
-
-	$('form').on('submit', function(event) {
-
-		$.ajax({
-			data : {
-                coins : $('#coins').val(),
-                a : $('#a').val(),
-                b : $('#b').val(),
-                c : $('#c').val(),
-                status : $('#status').val(),
-			},
-			type : 'POST',
-			url : '/bet'
-		})
-
-		event.preventDefault();
-
-	});
-
+$(function() {
+    $('button').click(function() {
+        $.ajax({
+            url: '/bet',
+            data: $('form').serialize(),
+            type: 'POST',
+            success: function(response) {
+                console.log(response);
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+    });
 });
