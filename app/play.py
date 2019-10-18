@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import os, sys
 import random as rd
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, json
 
 app = Flask(__name__)
 
@@ -178,6 +178,8 @@ def bet():
 
         return render_template('index.html', status=status, sequence=sequence,
             a=a, b=b, c=c, coins=data.coins)
+
+        # return json.dumps({'status':status,'sequence':sequence,'a':a,'b':b,'c':c,'coins':data.coins})
 
     else: 
         status = "Missing data"

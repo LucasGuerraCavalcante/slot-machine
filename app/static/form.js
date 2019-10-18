@@ -77,18 +77,20 @@ function sequences() {
 
 // One day I'll aply ajax in my project
 
-$(function() {
-    $('button').click(function() {
-        $.ajax({
-            url: '/bet',
-            data: $('form').serialize(),
-            type: 'POST',
-            success: function(response) {
-                console.log(response);
-            },
-            error: function(error) {
-                console.log(error);
-            }
-        });
-    });
+$(function(){
+	$('buttonDisplay').click(function(){
+		var bet = $('#buttonDisplay').val();
+		// var pass = $('#inputPassword').val();
+		$.ajax({
+			url: '/bet',
+			data: $('form').serialize(),
+			type: 'POST',
+			success: function(response){
+				console.log(response);
+			},
+			error: function(error){
+				console.log(error);
+			}
+		});
+	});
 });
